@@ -33,7 +33,7 @@ func _physics_process(delta):
 			mortePersonagem()
 			pass
 		
-	linear_velocidade = move_and_slide(linear_velocidade, Vector2(0, -1))
+	move_and_slide(linear_velocidade, Vector2(0, -1))
 	play_animacao()
 func _input(event):
 	
