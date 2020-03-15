@@ -9,6 +9,9 @@ extents = Vector2( 33, 11.25 )
 extents = Vector2( 31.1344, 1.5 )
 
 [node name="ground" type="StaticBody2D"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="sprite" type="Sprite" parent="."]
 position = Vector2( -0.999992, 0 )
