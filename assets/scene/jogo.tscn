@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/packed_scene/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packed_scene/cacadora.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprite/grounds_group.gd" type="Script" id=3]
+[ext_resource path="res://sprite/amazonas.jpg" type="Texture" id=4]
+[ext_resource path="res://sprite/lava.png" type="Texture" id=5]
 
 [node name="jogo" type="Node2D"]
 
@@ -20,3 +22,27 @@ position = Vector2( 429.912, 811.214 )
 
 [node name="cacadora" parent="." instance=ExtResource( 2 )]
 position = Vector2( 135.087, 263.804 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxBG" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1600, 0 )
+
+[node name="sprite_bg" type="Sprite" parent="ParallaxBackground/ParallaxBG"]
+position = Vector2( 715.375, 645.359 )
+scale = Vector2( 2.11416, 2.97197 )
+texture = ExtResource( 4 )
+
+[node name="foreground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="parallax_bg" type="ParallaxLayer" parent="foreground"]
+position = Vector2( 249.62, 1229.83 )
+motion_scale = Vector2( 1.5, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="sprite_bG" type="Sprite" parent="foreground/parallax_bg"]
+position = Vector2( 395.739, 39.5739 )
+scale = Vector2( 2.38765, 0.537147 )
+texture = ExtResource( 5 )
