@@ -10,7 +10,7 @@ extents = Vector2( 83.3844, 13 )
 extents = Vector2( 82.8844, 1.75 )
 
 [node name="ground" type="StaticBody2D"]
-position = Vector2( 20.75, 1.75 )
+position = Vector2( 21.75, 1.75 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
