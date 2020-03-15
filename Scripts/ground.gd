@@ -4,6 +4,8 @@ var estaMovendo = false
 var speed = 100
 
 func _ready():
+	randomize()
+	speed = int (rand_range(100, 200))
 	pass 
 
 

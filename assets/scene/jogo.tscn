@@ -13,10 +13,10 @@ script = ExtResource( 3 )
 ground = ExtResource( 1 )
 
 [node name="ground" parent="grounds_group" instance=ExtResource( 1 )]
-position = Vector2( 156.657, 812.872 )
+position = Vector2( 161.022, 812.872 )
 
 [node name="ground2" parent="grounds_group" instance=ExtResource( 1 )]
-position = Vector2( 436.46, 896.334 )
+position = Vector2( 429.912, 811.214 )
 
 [node name="cacadora" parent="." instance=ExtResource( 2 )]
 position = Vector2( 135.087, 263.804 )
