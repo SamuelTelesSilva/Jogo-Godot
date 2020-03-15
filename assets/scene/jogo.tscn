@@ -5,9 +5,6 @@
 
 [node name="jogo" type="Node2D"]
 
-[node name="cacadora" parent="." instance=ExtResource( 2 )]
-position = Vector2( 102.348, 89.1984 )
-
 [node name="grounds" type="Node2D" parent="."]
 
 [node name="ground" parent="grounds" instance=ExtResource( 1 )]
@@ -15,3 +12,6 @@ position = Vector2( 132.649, 633.902 )
 
 [node name="ground2" parent="grounds" instance=ExtResource( 1 )]
 position = Vector2( 436.46, 719.546 )
+
+[node name="cacadora" parent="." instance=ExtResource( 2 )]
+position = Vector2( 102.348, 89.1984 )

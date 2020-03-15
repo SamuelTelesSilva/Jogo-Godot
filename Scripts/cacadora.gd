@@ -30,7 +30,7 @@ func _physics_process(delta):
 		pulo = false
 		#se a posição do meu personagem for maior que o eicho x então ele morre
 		if position.y > get_viewport_rect().size.y:
-			
+			mortePersonagem()
 			pass
 		
 	linear_velocidade = move_and_slide(linear_velocidade, Vector2(0, -1))
@@ -59,7 +59,11 @@ func play_animacao():
 		$animacao.play("dead")
 	
 	
-	
+func mortePersonagem():
+
+	if estaVivo:
+		estaVivo = false
+		linear_velocidade = Vector2(0, forca_pulo)
 	
 	
 	
