@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/packed_scene/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packed_scene/cacadora.tscn" type="PackedScene" id=2]
@@ -7,9 +7,31 @@
 [ext_resource path="res://sprite/lava.png" type="Texture" id=5]
 [ext_resource path="res://font/Anton-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/hud.gd" type="Script" id=7]
+[ext_resource path="res://sprite/telaGameOver.png" type="Texture" id=8]
+[ext_resource path="res://sprite/menu.png" type="Texture" id=9]
+[ext_resource path="res://sprite/restart.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 368.169, -187.054 ), Vector2( 368.169, 600 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
 font_data = ExtResource( 6 )
 
 [node name="jogo" type="Node2D"]
@@ -74,3 +96,43 @@ text = "0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="game_over" type="Sprite" parent="hud"]
+position = Vector2( 368.169, -187.054 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hud/game_over"]
+anims/game_over = SubResource( 2 )
+
+[node name="best" type="Label" parent="hud/game_over"]
+margin_left = -5.60202
+margin_top = 66.1039
+margin_right = 34.398
+margin_bottom = 111.104
+custom_fonts/font = SubResource( 3 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="last" type="Label" parent="hud/game_over"]
+margin_left = -4.48163
+margin_top = -32.4916
+margin_right = 35.5184
+margin_bottom = 12.5084
+custom_fonts/font = SubResource( 3 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="restart" type="TouchScreenButton" parent="hud/game_over"]
+position = Vector2( -116.018, 77.7002 )
+scale = Vector2( 0.0762744, 0.0749011 )
+normal = ExtResource( 10 )
+
+[node name="menu" type="TouchScreenButton" parent="hud/game_over"]
+position = Vector2( 65.9918, 77.7 )
+scale = Vector2( 1.57654, 1.62089 )
+normal = ExtResource( 9 )
+[connection signal="pressed" from="hud/game_over/restart" to="hud" method="_on_restart_pressed"]

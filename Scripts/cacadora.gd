@@ -64,6 +64,12 @@ func mortePersonagem():
 	if estaVivo:
 		estaVivo = false
 		linear_velocidade = Vector2(0, forca_pulo)
+		get_tree().call_group("hud_group", "game_over")
+		
+		
+		
+		
+		
 	
 	
 	
