@@ -15,3 +15,7 @@ func game_over():
 
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_menu_pressed():
+	get_tree().change_scene("res://assets/scene/menu.tscn")

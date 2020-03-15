@@ -136,3 +136,4 @@ position = Vector2( 65.9918, 77.7 )
 scale = Vector2( 1.57654, 1.62089 )
 normal = ExtResource( 9 )
 [connection signal="pressed" from="hud/game_over/restart" to="hud" method="_on_restart_pressed"]
+[connection signal="pressed" from="hud/game_over/menu" to="hud" method="_on_menu_pressed"]
