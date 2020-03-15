@@ -94,9 +94,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 45.4146, 54.9336 )
+extents = Vector2( 92.6267, 211.179 )
 
 [node name="cacadora" type="KinematicBody2D"]
+position = Vector2( 3.67743, 115.235 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 54 )
 __meta__ = {
@@ -104,13 +105,12 @@ __meta__ = {
 }
 
 [node name="animacao" type="AnimatedSprite" parent="."]
-position = Vector2( 1.92656, -1.98291 )
-scale = Vector2( 0.240698, 0.224926 )
+position = Vector2( 157.036, 172.46 )
+scale = Vector2( 0.724658, 0.876983 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
-playing = true
+frame = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -7.76482, -3.23534 )
+position = Vector2( 129.597, 170.161 )
 shape = SubResource( 2 )

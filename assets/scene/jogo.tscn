@@ -1,25 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/packed_scene/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packed_scene/cacadora.tscn" type="PackedScene" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 36.7688, 54.53 )
-
 [node name="jogo" type="Node2D"]
 
 [node name="cacadora" parent="." instance=ExtResource( 2 )]
-position = Vector2( 33.1061, 190.528 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="cacadora"]
-position = Vector2( -7.5, -2.5 )
-shape = SubResource( 1 )
+position = Vector2( 1.01839, 79.0654 )
 
 [node name="grounds" type="Node2D" parent="."]
 
 [node name="ground" parent="grounds" instance=ExtResource( 1 )]
-position = Vector2( 39.7636, 306.269 )
+position = Vector2( 54.9631, 630.524 )
 
 [node name="ground2" parent="grounds" instance=ExtResource( 1 )]
-position = Vector2( 152.737, 342.937 )
+position = Vector2( 211.846, 706.035 )
