@@ -19,6 +19,10 @@ config/name="First Game"
 run/main_scene="res://assets/scene/menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameControl="*res://Scripts/game_control.gd"
+
 [display]
 
 window/size/width=720
