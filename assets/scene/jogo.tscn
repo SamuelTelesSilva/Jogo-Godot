@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/packed_scene/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packed_scene/cacadora.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprite/grounds_group.gd" type="Script" id=3]
 [ext_resource path="res://sprite/amazonas.jpg" type="Texture" id=4]
 [ext_resource path="res://sprite/lava.png" type="Texture" id=5]
+[ext_resource path="res://font/Anton-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scripts/hud.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 6 )
 
 [node name="jogo" type="Node2D"]
 
@@ -38,11 +44,33 @@ texture = ExtResource( 4 )
 layer = 1
 
 [node name="parallax_bg" type="ParallaxLayer" parent="foreground"]
-position = Vector2( 249.62, 1229.83 )
 motion_scale = Vector2( 1.5, 1 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="sprite_bG" type="Sprite" parent="foreground/parallax_bg"]
-position = Vector2( 395.739, 39.5739 )
+position = Vector2( 420.092, 1257.23 )
 scale = Vector2( 2.38765, 0.537147 )
 texture = ExtResource( 5 )
+
+[node name="hud" type="CanvasLayer" parent="." groups=[
+"hud_group",
+]]
+layer = 2
+script = ExtResource( 7 )
+
+[node name="score" type="Label" parent="hud"]
+margin_left = 341.447
+margin_top = -6.10352e-05
+margin_right = 400.447
+margin_bottom = 357.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.972549, 0.952941, 0.952941, 1 )
+custom_colors/font_outline_modulate = Color( 0.109804, 0.831373, 0.0666667, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 4
+custom_constants/shadow_as_outline = 1
+text = "0
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
