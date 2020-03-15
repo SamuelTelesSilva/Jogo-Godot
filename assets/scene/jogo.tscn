@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/packed_scene/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/packed_scene/cacadora.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://sprite/telaGameOver.png" type="Texture" id=8]
 [ext_resource path="res://sprite/menu.png" type="Texture" id=9]
 [ext_resource path="res://sprite/restart.png" type="Texture" id=10]
+[ext_resource path="res://assets/audio/song.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -135,5 +136,8 @@ normal = ExtResource( 10 )
 position = Vector2( 65.9918, 77.7 )
 scale = Vector2( 1.57654, 1.62089 )
 normal = ExtResource( 9 )
+
+[node name="music" type="AudioStreamPlayer" parent="hud"]
+stream = ExtResource( 11 )
 [connection signal="pressed" from="hud/game_over/restart" to="hud" method="_on_restart_pressed"]
 [connection signal="pressed" from="hud/game_over/menu" to="hud" method="_on_menu_pressed"]

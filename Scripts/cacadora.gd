@@ -22,6 +22,7 @@ func _physics_process(delta):
 			linear_velocidade.x = 0
 			if pulo:
 				linear_velocidade.y = forca_pulo
+				$jump_fx.play()
 		elif movimento:
 			linear_velocidade.x = speed
 		else:
@@ -65,6 +66,8 @@ func mortePersonagem():
 		estaVivo = false
 		linear_velocidade = Vector2(0, forca_pulo)
 		get_tree().call_group("hud_group", "game_over")
+		$death_fx.play()
+		
 		
 		
 		
